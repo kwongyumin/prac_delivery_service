@@ -2,6 +2,7 @@ package org.delivery.api.account;
 
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.account.model.AccountMeResponse;
+import org.delivery.api.common.api.Api;
 import org.delivery.core.account.AccountRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,13 +20,14 @@ public class AccountApiController {
     // config 클래스파일을 생성하여 빈을 스캔 한다.
 
     @GetMapping("/me")
-    public AccountMeResponse me() {
-
-        return AccountMeResponse.builder()
+    public Api<AccountMeResponse> me() {
+        var response = AccountMeResponse.builder()
                 .name("테스터 ")
                 .email("eamil@tester.com")
                 .registeredAt(LocalDateTime.now())
                 .build();
+
+        return Api.OK(response);
 
     }
 }
