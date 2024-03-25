@@ -21,6 +21,7 @@ public class LoggerFilter implements Filter {
 
         var requestMapper = new ContentCachingRequestWrapper((HttpServletRequest) request);
         var responseMapper = new ContentCachingResponseWrapper((HttpServletResponse) response);
+        log.info("INIT URI : {}", requestMapper.getRequestURI());
 
         // 실행 전
         chain.doFilter(requestMapper, responseMapper);
