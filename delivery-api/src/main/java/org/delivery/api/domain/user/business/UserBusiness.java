@@ -4,10 +4,13 @@ import lombok.RequiredArgsConstructor;
 import org.delivery.api.common.annotation.Business;
 import org.delivery.api.common.error.ErrorCode;
 import org.delivery.api.common.exception.ApiException;
+import org.delivery.api.domain.token.business.TokenBusiness;
+import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.user.controller.model.UserLoginRequest;
 import org.delivery.api.domain.user.controller.model.UserRegisterRequest;
 import org.delivery.api.domain.user.controller.model.UserResponse;
 import org.delivery.api.domain.user.converter.UserConverter;
+import org.delivery.api.domain.user.model.User;
 import org.delivery.api.domain.user.service.UserService;
 
 import java.util.Optional;
@@ -22,6 +25,8 @@ public class UserBusiness {
 
     private final UserService userService;
     private final UserConverter userConverter;
+
+    private final TokenBusiness tokenBusiness;
 
     /**
      * 사용자에 대한 가입처리 로직
@@ -45,11 +50,15 @@ public class UserBusiness {
      * 4. token response
      *
      */
-    public UserResponse login(UserLoginRequest request) {
+    public TokenResponse login(UserLoginRequest request) {
         var userEntity = userService.login(request.getEmail() , request.getPassword());
-        // 사용자가 없다면 throw
+        return tokenBusiness.issueToken(userEntity);
+    }
 
-        // TODO 토큰 로직으로 변경할 것임.
+    // 내 정보 조회 , (테스트 )
+    public UserResponse me (User user) {
+        var userEntity = userService.getUserWithThrow(user.getId());
         return userConverter.toResponse(userEntity);
     }
+
 }
