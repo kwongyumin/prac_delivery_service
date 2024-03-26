@@ -3,6 +3,8 @@ package org.delivery.api.domain.user.controller;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.common.api.Api;
+import org.delivery.api.domain.token.business.TokenBusiness;
+import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.user.business.UserBusiness;
 import org.delivery.api.domain.user.controller.model.UserLoginRequest;
 import org.delivery.api.domain.user.controller.model.UserRegisterRequest;
@@ -20,7 +22,7 @@ public class UserOpenApiController {
     private final UserBusiness userBusiness;
 
     // 사용자 가입 처리
-    @PostMapping("/resister")
+    @PostMapping("/register")
     public Api<UserResponse> register(@Valid @RequestBody Api<UserRegisterRequest> request) {
         var response = userBusiness.register(request.getBody());
         return Api.OK(response);
@@ -28,7 +30,7 @@ public class UserOpenApiController {
 
     //로그인
     @PostMapping("/login")
-    public Api<UserResponse> login(@Valid @RequestBody Api<UserLoginRequest> request) {
+    public Api<TokenResponse> login(@Valid @RequestBody Api<UserLoginRequest> request) {
         var response = userBusiness.login(request.getBody());
         return Api.OK(response);
     }
