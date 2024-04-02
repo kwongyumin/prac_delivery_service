@@ -26,20 +26,17 @@
 - **Spring Data JPA**
 - **Spring Security** 
 - **Flyway Migration**
-- **Naver Cloud Platform**
 - **Rabbit MQ**
 - **Docker**
-- 
+- **Swagger**
 
-## 브랜치 전략
+## 브랜치 전략 
+[우아한 형제들 기술 블로그 참고](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html).
 - Master : 배포시 사용합니다.
 - Dev : 완전히 개발이 끝난 부분에 대해서만 Merge를 진행합니다.
 - Feature : 기능 단위 개발을 진행할 때 사용합니다.
 - Release : 배포 전 검증단계에서 사용합니다.
 - Hot-Fix : 배포를 진행한 후 발생한 버그를 수정해야 할 때 사용합니다.
-- 우아한 형제들 기술 블로그(http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
 
-## ERD (추가)
-
-
- 
+## ERD
+<img src="./erd.png" width="600" height="400">
