@@ -7,7 +7,9 @@ import org.delivery.api.domain.storemenu.controller.model.StoreMenuRegisterReque
 import org.delivery.api.domain.storemenu.controller.model.StoreMenuResponse;
 import org.delivery.core.storemenu.StoreMenuEntity;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Converter
 public class StoreMenuConverter {
@@ -39,6 +41,10 @@ public class StoreMenuConverter {
                             .sequence(entity.getSequence())
                             .build();
                 }).orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT_ERROR));
+    }
+
+    public List<StoreMenuResponse> toResponse (List<StoreMenuEntity> list) {
+        return list.stream().map(this::toResponse).collect(Collectors.toList());
     }
 
 }
