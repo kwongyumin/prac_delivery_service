@@ -37,6 +37,4 @@ out/
 .vscode/
 
 ### yaml
-/delivery-api/src/main/resources/application.yaml
-### Docker
-/delivery-api/db/data
+/delivery-api/src/main/resources/**
