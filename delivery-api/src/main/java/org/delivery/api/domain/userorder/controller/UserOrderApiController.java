@@ -36,7 +36,7 @@ public class UserOrderApiController {
     }
 
     // 과거 주문 내역
-    @GetMapping("/current")
+    @GetMapping("/history")
     public Api<List<UserOrderDetailResponse>> history(@Parameter(hidden = true) @UserSession User user) {
         var response = userOrderBusiness.history(user);
         return Api.OK(response);
