@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot'
+    id 'io.spring.dependency-management'
+}
+
+group = 'org.delivery'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':delivery-core')
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // spring boot 3 ver -> spring doc 2 ver 사용해야함. (fox 지원안됨,)
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    // spring-security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// 애플리케이션 실행 jar만 빌드
+bootJar{
+    enabled = true
+}
+
+jar {
+    enabled = false
+}
