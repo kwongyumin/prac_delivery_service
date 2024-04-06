@@ -23,14 +23,14 @@ repositories {
 
 dependencies {
     implementation project(':delivery-core')
+    implementation project(':common')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    // spring boot 3 ver -> spring doc 2 ver 사용해야함. (fox 지원안됨,)
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
     // spring-security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 

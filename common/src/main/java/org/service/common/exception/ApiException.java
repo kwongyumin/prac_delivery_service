@@ -1,11 +1,11 @@
-package org.delivery.api.common.exception;
+package org.service.common.exception;
 
 
 import lombok.Getter;
-import org.delivery.api.common.error.ErrorCodeIfs;
+import org.service.common.error.ErrorCodeIfs;
 
 @Getter
-public class ApiException extends RuntimeException implements ApiExceptionIfs{
+public class ApiException extends RuntimeException implements ApiExceptionIfs {
 
     private final ErrorCodeIfs errorCodeIfs;
     private final String errorDescription;

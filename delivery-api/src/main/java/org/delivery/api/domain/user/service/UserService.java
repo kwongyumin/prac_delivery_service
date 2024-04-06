@@ -1,12 +1,12 @@
 package org.delivery.api.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.error.UserErrorCode;
-import org.delivery.api.common.exception.ApiException;
 import org.delivery.core.user.UserEntity;
 import org.delivery.core.user.UserRepository;
 import org.delivery.core.user.enums.UserStatus;
+import org.service.common.error.ErrorCode;
+import org.service.common.error.UserErrorCode;
+import org.service.common.exception.ApiException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

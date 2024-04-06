@@ -1,10 +1,10 @@
 package org.delivery.api.domain.userorder.converter;
 
-import org.delivery.api.common.annotation.Converter;
 import org.delivery.api.domain.user.model.User;
 import org.delivery.api.domain.userorder.controller.model.UserOrderResponse;
 import org.delivery.core.storemenu.StoreMenuEntity;
 import org.delivery.core.userorder.UserOrderEntity;
+import org.service.common.annotation.Converter;
 
 import java.math.BigDecimal;
 import java.util.List;

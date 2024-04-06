@@ -1,10 +1,10 @@
-package org.delivery.api.common.api;
+package org.service.common.api;
 
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.delivery.api.common.error.ErrorCodeIfs;
+import org.service.common.error.ErrorCodeIfs;
 
 @Data
 @NoArgsConstructor

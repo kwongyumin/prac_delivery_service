@@ -1,10 +1,10 @@
 package org.delivery.api.domain.store.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.api.Api;
 import org.delivery.api.domain.store.business.StoreBusiness;
 import org.delivery.api.domain.store.controller.model.StoreResponse;
 import org.delivery.core.store.enums.StoreCategory;
+import org.service.common.api.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

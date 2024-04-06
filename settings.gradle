@@ -2,4 +2,5 @@ rootProject.name = 'service'
 include 'delivery-api'
 include 'delivery-core'
 include 'store-admin'
+include 'common'
 

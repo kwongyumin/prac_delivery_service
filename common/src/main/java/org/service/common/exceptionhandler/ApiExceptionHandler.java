@@ -1,8 +1,8 @@
-package org.delivery.api.exceptionhandler;
+package org.service.common.exceptionhandler;
 
 import lombok.extern.slf4j.Slf4j;
-import org.delivery.api.common.api.Api;
-import org.delivery.api.common.exception.ApiException;
+import org.service.common.api.Api;
+import org.service.common.exception.ApiException;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
