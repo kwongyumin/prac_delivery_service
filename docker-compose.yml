@@ -1,25 +1,25 @@
-version: "3.8"
-
-## Mysql
-services:
-  database-mysql:
-    container_name: mysql-container
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: '1234'
-      MYSQL_ROOT_HOST: '%'
-      MYSQL_DATABASE: 'delivery'
-      TZ: Asia/Seoul
-    volumes:
-      # - ./mysql/db:/var/lib/mysql
-      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
-
-    ports:
-      - '3317:3306'
-    command:
-      - 'mysqld'
-      - '--character-set-server=utf8mb4'
-      - '--collation-server=utf8mb4_unicode_ci'
+#version: "3.8"
+# 주석처리 , -> wsl, ubuntu 오류 해결 중 , 잠시 local mysql 사용
+### Mysql
+#services:
+#  database-mysql:
+#    container_name: mysql-container
+#    image: mysql:latest
+#    environment:
+#      MYSQL_ROOT_PASSWORD: '1234'
+#      MYSQL_ROOT_HOST: '%'
+#      MYSQL_DATABASE: 'delivery'
+#      TZ: Asia/Seoul
+#    volumes:
+#      # - ./mysql/db:/var/lib/mysql
+#      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+#
+#    ports:
+#      - '3317:3306'
+#    command:
+#      - 'mysqld'
+#      - '--character-set-server=utf8mb4'
+#      - '--collation-server=utf8mb4_unicode_ci'
 
 
 ## docker compose -> application container 실행 목적

@@ -38,3 +38,4 @@ out/
 
 ### yaml
 /delivery-api/src/main/resources/**
+/store-admin/src/main/resources/**
