@@ -1,11 +1,11 @@
 package org.delivery.api.domain.userorder.service;
 
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.exception.ApiException;
 import org.delivery.core.userorder.UserOrderEntity;
 import org.delivery.core.userorder.UserOrderRepository;
 import org.delivery.core.userorder.enums.UserOrderStatus;
+import org.service.common.error.ErrorCode;
+import org.service.common.exception.ApiException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

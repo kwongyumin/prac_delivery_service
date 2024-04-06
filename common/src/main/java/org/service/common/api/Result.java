@@ -1,11 +1,12 @@
-package org.delivery.api.common.api;
+package org.service.common.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.error.ErrorCodeIfs;
+import org.service.common.error.ErrorCode;
+import org.service.common.error.ErrorCodeIfs;
+
 
 @Data
 @NoArgsConstructor

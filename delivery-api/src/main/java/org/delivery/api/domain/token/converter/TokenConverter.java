@@ -1,16 +1,16 @@
 package org.delivery.api.domain.token.converter;
 
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.annotation.Converter;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.exception.ApiException;
 import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.token.model.TokenDto;
+import org.service.common.annotation.Converter;
+import org.service.common.error.ErrorCode;
+import org.service.common.exception.ApiException;
 
 import java.util.Objects;
 
-@Converter
 @RequiredArgsConstructor
+@Converter
 public class TokenConverter {
 
     public TokenResponse toResponse(TokenDto accessToken, TokenDto refreshToken){

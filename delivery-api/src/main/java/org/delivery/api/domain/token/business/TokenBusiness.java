@@ -1,19 +1,18 @@
 package org.delivery.api.domain.token.business;
 
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.delivery.api.common.annotation.Business;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.exception.ApiException;
 import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.token.converter.TokenConverter;
 import org.delivery.api.domain.token.service.TokenService;
 import org.delivery.core.user.UserEntity;
+import org.service.common.annotation.Business;
+import org.service.common.error.ErrorCode;
+import org.service.common.exception.ApiException;
 
 import java.util.Optional;
 
-@Business
 @RequiredArgsConstructor
+@Business
 public class TokenBusiness {
 
     private final TokenService tokenService;

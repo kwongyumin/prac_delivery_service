@@ -1,4 +1,4 @@
-package org.delivery.api.common.annotation;
+package org.service.common.annotation;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Service;
