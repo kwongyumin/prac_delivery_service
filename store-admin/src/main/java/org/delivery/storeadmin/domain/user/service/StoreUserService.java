@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class StoerUserService {
+public class StoreUserService {
 
     private final StoreUserRepository storeUserRepository;
     private final PasswordEncoder passwordEncoder;

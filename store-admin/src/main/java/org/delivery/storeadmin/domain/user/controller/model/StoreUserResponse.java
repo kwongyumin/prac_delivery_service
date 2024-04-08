@@ -24,7 +24,7 @@ public class StoreUserResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
-    static class UserResponse{
+    public static class UserResponse{
 
         private Long id; // 사용자
 
@@ -47,7 +47,7 @@ public class StoreUserResponse {
     @NoArgsConstructor
     @AllArgsConstructor
     @Builder
-    static class StoreResponse{
+    public static class StoreResponse{
 
         private Long storeId; // 가맹점
 
