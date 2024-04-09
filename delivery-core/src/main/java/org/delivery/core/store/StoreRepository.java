@@ -15,4 +15,6 @@ public interface StoreRepository extends JpaRepository<StoreEntity, Long> {
     List<StoreEntity> findAllByStatusOrderByIdDesc(StoreStatus status);
     // 유요한 특정 카테고리의 스토어 리스트
     List<StoreEntity> findAllByStatusAndCategoryOrderByStarDesc(StoreStatus status , StoreCategory category);
+
+    Optional<StoreEntity> findFirstByNameAndStatusOrderByIdDesc(String name , StoreStatus status);
 }

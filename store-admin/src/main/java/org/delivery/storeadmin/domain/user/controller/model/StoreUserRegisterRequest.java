@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.delivery.core.storeuser.enums.StoreUserRole;
 
 @Data
 @NoArgsConstructor
@@ -21,6 +22,6 @@ public class StoreUserRegisterRequest {
     private String password;
 
     @NotBlank
-    private String role;
+    private StoreUserRole role;
 
 }
