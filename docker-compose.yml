@@ -1,7 +1,18 @@
-#version: "3.8"
+version: "3.8"
 # 주석처리 , -> wsl, ubuntu 오류 해결 중 , 잠시 local mysql 사용
+
+# rabbitMQ
+services:
+  rabbitmq:
+    image: rabbitmq:latest
+    ports:
+      - "5672:5672" # rabbit amqp port
+      - "15672:15672" # manage port
+    environment:
+      - RABBITMQ_DEFAULT_USER = admin    # 기본 사용자
+      - RABBITMQ_DEFAULT_PASS = admin123 # 기본 사용자 pw
+
 ### Mysql
-#services:
 #  database-mysql:
 #    container_name: mysql-container
 #    image: mysql:latest
