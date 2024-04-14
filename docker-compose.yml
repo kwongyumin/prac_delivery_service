@@ -1,25 +1,37 @@
-#version: "3.8"
-# 주석처리 , -> wsl, ubuntu 오류 해결 중 , 잠시 local mysql 사용
+version: "3.8"
+# 주석처리 , -> wsl, ubuntu 오류 해결 중 , 잠시 local mysql 사용 -> 해결 (모니터링 필요)
+
+# rabbitMQ
+services:
+  rabbitmq:
+    container_name: rabbitmq-container
+    image: rabbitmq:latest
+    ports:
+      - "5672:5672" # rabbit amqp port
+      - "15672:15672" # manage port
+    environment:
+      - RABBITMQ_DEFAULT_USER = admin
+      - RABBITMQ_DEFAULT_PASS = admin123!@#
+
 ### Mysql
-#services:
-#  database-mysql:
-#    container_name: mysql-container
-#    image: mysql:latest
-#    environment:
-#      MYSQL_ROOT_PASSWORD: '1234'
-#      MYSQL_ROOT_HOST: '%'
-#      MYSQL_DATABASE: 'delivery'
-#      TZ: Asia/Seoul
-#    volumes:
-#      # - ./mysql/db:/var/lib/mysql
-#      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
-#
-#    ports:
-#      - '3317:3306'
-#    command:
-#      - 'mysqld'
-#      - '--character-set-server=utf8mb4'
-#      - '--collation-server=utf8mb4_unicode_ci'
+  database-mysql:
+    container_name: mysql-container
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: '1234'
+      MYSQL_ROOT_HOST: '%'
+      MYSQL_DATABASE: 'delivery'
+      TZ: Asia/Seoul
+    volumes:
+      # - ./mysql/db:/var/lib/mysql
+      - ./mysql/initdb.d:/docker-entrypoint-initdb.d
+
+    ports:
+      - '3317:3306'
+    command:
+      - 'mysqld'
+      - '--character-set-server=utf8mb4'
+      - '--collation-server=utf8mb4_unicode_ci'
 
 
 ## docker compose -> application container 실행 목적
