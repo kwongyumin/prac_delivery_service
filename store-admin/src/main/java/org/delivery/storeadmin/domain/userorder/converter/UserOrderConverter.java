@@ -1,33 +1,18 @@
-package org.delivery.api.domain.userorder.converter;
+package org.delivery.storeadmin.domain.userorder.converter;
 
-import org.delivery.api.domain.user.model.User;
-import org.delivery.api.domain.userorder.controller.model.UserOrderResponse;
-import org.delivery.core.storemenu.StoreMenuEntity;
 import org.delivery.core.userorder.UserOrderEntity;
+import org.delivery.storeadmin.domain.userorder.controller.model.UserOrderResponse;
 import org.service.common.annotation.Converter;
 
-import java.math.BigDecimal;
-import java.util.List;
 
 @Converter
 public class UserOrderConverter {
 
-    public UserOrderEntity toEntity(User user,Long storeId, List<StoreMenuEntity> storeMenuEntityList) {
-
-        var totalAmount = storeMenuEntityList.stream()
-                .map(StoreMenuEntity::getAmount)
-                .reduce(BigDecimal.ZERO , BigDecimal::add);
-
-        return UserOrderEntity.builder()
-                .userId(user.getId())
-                .storeId(storeId)
-                .amount(totalAmount)
-                .build();
-    }
-
     public UserOrderResponse toResponse(UserOrderEntity userOrderEntity) {
         return UserOrderResponse.builder()
                 .id(userOrderEntity.getId())
+                .userId(userOrderEntity.getUserId())
+                .storeId(userOrderEntity.getStoreId())
                 .status(userOrderEntity.getStatus())
                 .amount(userOrderEntity.getAmount())
                 .orderedAt(userOrderEntity.getOrderedAt())
@@ -37,5 +22,7 @@ public class UserOrderConverter {
                 .receivedAt(userOrderEntity.getReceivedAt())
                 .build();
     }
+
+
 
 }
