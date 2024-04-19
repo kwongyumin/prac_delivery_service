@@ -44,7 +44,7 @@ public class UserBusiness {
 
     /**
      * 1. email , password 를 가지고 사용자 체크
-     * 2. user entity 로그인 확인
+     * 2. storeuser entity 로그인 확인
      * 3. token 생성
      * 4. token response
      *

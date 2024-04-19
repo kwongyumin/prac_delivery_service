@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class UIserOrderMenuService {
+public class UserOrderMenuService {
 
 
     private final UserOrderMenuRepository userOrderMenuRepository;

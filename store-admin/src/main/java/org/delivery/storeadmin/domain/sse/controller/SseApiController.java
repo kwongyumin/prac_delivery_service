@@ -28,7 +28,7 @@ public class SseApiController {
 
     @GetMapping(path = "/connect",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public ResponseBodyEmitter connect(@Parameter(hidden = true) @AuthenticationPrincipal UserSession userSession) {
-        log.info("login user {}", userSession);
+        log.info("login storeuser {}", userSession);
         var userSseConnection = UserSseConnection.connect(userSession.getStoreId().toString(),sseConnectionPool,objectMapper);
         return userSseConnection.getSseEmitter();
     }

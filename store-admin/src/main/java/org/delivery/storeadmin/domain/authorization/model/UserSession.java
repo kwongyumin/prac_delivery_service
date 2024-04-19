@@ -23,7 +23,7 @@ import java.util.List;
 @Builder
 public class UserSession implements UserDetails {
 
-    // user
+    // storeuser
     private Long userId;
 
     private String email;
