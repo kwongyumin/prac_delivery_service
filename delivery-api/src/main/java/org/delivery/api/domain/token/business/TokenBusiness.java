@@ -21,7 +21,7 @@ public class TokenBusiness {
 
 
     /**
-     *  1. user Entity userId 추출
+     *  1. storeuser Entity userId 추출
      *  2. access , refresh token 발행
      *  3. converter -> token response 변경
      */

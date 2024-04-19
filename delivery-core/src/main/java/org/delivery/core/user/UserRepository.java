@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
 
-    // select * from dalivery.user where id = '' and status = '' order by id desc limit 1;
+    // select * from dalivery.storeuser where id = '' and status = '' order by id desc limit 1;
     Optional<UserEntity> findFirstByIdAndStatusOrderByIdDesc(Long userId , UserStatus userStatus);
 
     Optional<UserEntity> findFirstByEmailAndPasswordAndStatusOrderByIdDesc(String email, String password, UserStatus userStatus);

@@ -10,7 +10,7 @@ import org.delivery.core.user.enums.UserStatus;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "user")
+@Table(name = "storeuser")
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
